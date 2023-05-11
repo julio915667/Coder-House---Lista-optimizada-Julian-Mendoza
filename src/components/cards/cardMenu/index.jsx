@@ -1,8 +1,15 @@
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text, Card, Button, Image } from '@rneui/themed';
+import { useState } from 'react';
+import { CardView } from '../cardView';
 
 const CardMenu = ({ name, description, imageUrl }) => {
+  const [mostrarDetalles, setMostrarDetalles] = useState(false)
+
+  if(mostrarDetalles){
+    return CardView({name, description})
+  }
   return (
     <View>
       <Card>
@@ -21,7 +28,8 @@ const CardMenu = ({ name, description, imageUrl }) => {
             marginRight: 0,
             marginBottom: 0,
           }}
-          title="VIEW NOW"
+          title="Ver Ahora"
+          onPress={() => setMostrarDetalles(true)}
         />
       </Card>
     </View>

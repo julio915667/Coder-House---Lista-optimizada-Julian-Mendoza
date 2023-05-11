@@ -1,16 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, TextInput, View, SectionList } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { CardMenu } from './components/cards';
+import { CardMenu, CardView } from './components/cards';
 import { Avatar } from '@rneui/base';
 import {HomeNavBar} from "./components/navbar/index"
 import Home from './components/dataRecibe';
+import { useState } from 'react';
+
+
 
 
 
 
 
 export default function App() {
+  const [mostrarDetalles, setMostrarDetalles] = useState(false)
+ 
   return (
     <View style={styles.backgroundApp}>
       <StatusBar style="auto" />
@@ -21,7 +26,7 @@ export default function App() {
 
       <View style={styles.container}>
       <Home/>
-    
+
       </View>
     
     </View>

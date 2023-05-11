@@ -1,17 +1,23 @@
-import { View } from "react-native"
+import { ActivityIndicator, View } from "react-native"
 import { Avatar } from '@rneui/themed';
 import { Header } from '@rneui/themed';
 import { styles } from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Text } from "react-native-elements";
+import { useFonts } from "expo-font"
 const HomeNavBar = () => {
+
+  const[loaded] = useFonts({
+    "Oswald-Bold": require("../../../../assets/fonts/Oswald-Light")
+  })
+  if(loaded){
+    return <ActivityIndicator size="large" color="red"/>
+  }
   return (
     <View style={styles.containerNav}>   
     <Header style={styles.headerNav}>
-      <View>
-          <Avatar
-        size={64}
-        rounded
-        source={ { uri: "https://res.cloudinary.com/hdsqazxtw/image/upload/v1680302268/hqdyye6dn8jcvowrzimd.jpg" }}/>
+      <View style={styles.ContainerName}>
+         <Text style={styles.TextHead}>TaskMaster</Text>
       </View>
     
           <View style={styles.containerIcon}>
