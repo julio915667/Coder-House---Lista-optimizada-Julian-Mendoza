@@ -4,15 +4,10 @@ import { Header } from '@rneui/themed';
 import { styles } from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Text } from "react-native-elements";
-import { useFonts } from "expo-font"
+
 const HomeNavBar = () => {
 
-  const[loaded] = useFonts({
-    "Oswald-Bold": require("../../../../assets/fonts/Oswald-Light")
-  })
-  if(loaded){
-    return <ActivityIndicator size="large" color="red"/>
-  }
+
   return (
     <View style={styles.containerNav}>   
     <Header style={styles.headerNav}>
